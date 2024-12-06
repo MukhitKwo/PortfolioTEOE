@@ -1,0 +1,79 @@
+/* TEXT1 */
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%); /* Start off-screen to the right */
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0); /* End at its normal position */
+        opacity: 1;
+    }
+}
+
+.text-container {
+    animation: slideInRight 1s ease-out forwards; /* Apply animation */
+}
+
+/* BUTTONS */
+@keyframes slideInTop {
+    from {
+        transform: translateY(-100%); /* Start off-screen above */
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0); /* End at its normal position */
+        opacity: 1;
+    }
+}
+
+.button1 {
+    animation: slideInTop 0.2s ease-out forwards;
+}
+
+.button2 {
+    animation: slideInTop 0.4s ease-out forwards;
+}
+
+.button3 {
+    animation: slideInTop 0.6s ease-out forwards;
+}
+
+.button4 {
+    animation: slideInTop 0.8s ease-out forwards;
+}
+
+.button5 {
+    animation: slideInTop 1s ease-out forwards;
+}
+
+/* IMAGE1 */
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%); /* Start off-screen to the left */
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0); /* End at its normal position */
+        opacity: 1;
+    }
+}
+
+.image-container {
+    animation: slideInLeft 1s ease-out forwards;
+}
+
+/* LOGO */
+@keyframes slideInBottom {
+    from {
+        transform: translateY(100%); /* Start off-screen below */
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0); /* End at its normal position */
+        opacity: 1;
+    }
+}
+
+.top-left-container {
+    animation: slideInBottom 1s ease-out forwards;
+}

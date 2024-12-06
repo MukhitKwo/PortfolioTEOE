@@ -1,0 +1,668 @@
+/* Basic Reset and Global Styling */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body,
+html {
+	height: 100%;
+	overflow: hidden;
+	font-family: Arial, sans-serif;
+}
+
+:root {
+	--primary-color: #222222;
+	--secondary-color: #444444;
+	--text-color: white;
+}
+
+/* TEXT */
+.section {
+	height: 100vh;
+	display: flex;
+	flex-direction: column; /* Stack the buttons on top of the content */
+	justify-content: center;
+	align-items: center;
+	color: var(--text-color);
+	text-align: center;
+}
+
+#section1,
+#section2,
+#section3,
+#section4,
+#section5,
+#section6,
+#section7 {
+	background-color: var(--primary-color);
+}
+
+/*====================================================== ALWAYS TOP ==================================================================*/
+
+.half-width-container {
+	/* width: 55%; Sets the width to 50% */
+	margin-right: 3%;
+	padding: 20px;
+	position: absolute; /* Positions it above the image */
+	top: 0; /* Aligns it to the top of the section */
+	right: 0; /* Aligns it to the right */
+	display: flex;
+	justify-content: center; /* Aligns buttons to the right */
+	z-index: 4;
+	/* border: red 1px solid; */
+}
+
+/* BOTAOES TOP */
+.half-width-container button {
+	flex: 1;
+	padding: 15px;
+	width: 140px;
+	text-align: center;
+	font-size: 120%;
+	color: var(--text-color);
+	border: none;
+	cursor: pointer;
+	text-align: center;
+	background-color: transparent;
+	margin: 0;
+	transition: background-color 0.2s ease, font-size 0.2s ease;
+	z-index: 15;
+}
+
+.half-width-container button:hover {
+	background-color: white; /* Optional: slight highlight on hover */
+	color: #222222;
+}
+
+.half-width-container button.active {
+	text-decoration: underline;
+	font-size: 140%;
+}
+
+/* Container styling */
+.top-left-container {
+	position: absolute;
+	top: 3%;
+	left: 1%;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	cursor: pointer;
+	z-index: 10;
+	/* border: red 1px solid; */
+}
+
+/* Image styling */
+.top-left-image {
+	width: 50px; /* Adjust size as needed */
+	height: 50px; /* Adjust size as needed */
+	transition: transform 0.5s ease; /* Smooth rotation effect */
+}
+
+/* Text styling */
+.top-left-text {
+	/* position: absolute; */
+	top: 0;
+	left: 0;
+	color: var(--text-color); /* Text color */
+	font-size: 180%;
+	padding: 5px; /* Optional: space around the text */
+	z-index: 10;
+	color: var(--text-color); /* Use existing color variable */
+	transition: color 0.3s ease, content 0.3s ease; /* Smooth color transition */
+}
+
+/* Hover effects */
+.top-left-container:hover .top-left-image {
+	transform: rotate(90deg); /* Rotate image 90 degrees */
+}
+
+.top-left-container:hover .top-left-text {
+	content: "Go Home"; /* Update text on hover */
+}
+
+/* ========================================================= HOME s1 ===================================================================== */
+
+.split {
+	display: flex;
+	width: 100%;
+	max-width: none;
+	height: 100%;
+}
+
+/* IMAGE */
+.image-container {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+}
+
+.image-container::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(to right, rgba(24, 24, 35, 0) 70%, var(--primary-color) 100%);
+	z-index: 1; /* Make sure this overlay is above the image */
+}
+
+.image-container img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	position: relative;
+	z-index: 0; /* Image is underneath the gradient overlay */
+	transform: scaleX(-1);
+}
+
+/* TEXTO COM IMAGEM PAGINA 1 */
+.text-container {
+	width: 70%;
+	padding: 20px;
+	font-size: 40px;
+	position: relative;
+	margin-top: 3%;
+	left: -6%; /* Move 20% left to overlap the image */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: left; /* Align text to the left */
+	z-index: 2;
+}
+
+#para1 {
+	padding-top: 10px;
+	font-size: 30px;
+}
+
+#para2 {
+	padding-top: 10px;
+	font-size: 20px;
+}
+
+/* SOCIAL MEDIA ICONS */
+.social-icons {
+	display: flex; /* Aligns the icons horizontally */
+	justify-content: flex-start; /* Aligns icons to the left */
+	gap: 20px; /* Adds space between icons */
+	margin-top: 20px;
+}
+
+.social-icons .icon {
+	filter: invert(1);
+	width: 30px; /* Set the size of each icon */
+	height: 30px;
+	object-fit: contain; /* Keeps the aspect ratio of icons */
+	transition: transform 0.3s ease;
+}
+
+.icon:hover {
+	transform: scale(1.2); /* Slightly increase size on hover */
+}
+
+/* BOTAO COMEÇAR */
+#begin-btn {
+	margin-top: 20px; /* Space between icons and button */
+	padding: 10px 20px;
+	font-size: 16px;
+	background-color: transparent;
+	color: var(--text-color);
+	border: var(--text-color) 2px solid;
+	border-radius: 7px;
+	width: 50%;
+	cursor: pointer;
+	display: inline-block;
+	text-align: center;
+	text-transform: uppercase;
+	transition: background-color 0.2s ease;
+}
+
+#begin-btn:hover {
+	background-color: white; /* Optional: slight highlight on hover */
+	color: #181823;
+}
+
+/* ========================================================= BIO s2 ===================================================================== */
+
+.image-containerBio {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+}
+
+.image-containerBio::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(to left, rgba(0, 0, 0, 0) 50%, var(--primary-color) 100%);
+	z-index: 2; /* Make sure this overlay is above the image */
+}
+
+.image-containerBio img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	position: relative;
+	z-index: 1; /* Image is underneath the gradient overlay */
+}
+
+.text-containerBio {
+	width: 100%;
+	padding: 20px;
+	font-size: 20px;
+	position: relative;
+	left: 5%; /* Move 20% left to overlap the image */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: left; /* Align text to the left */
+	z-index: 3;
+	margin-top: 2%;
+	/* border: red 1px solid; */
+}
+
+#textBio {
+	margin-top: 20px;
+	/* border: 3px solid var(--text-color); */
+	border-radius: 7px;
+	/* background-color: #1a1a1a; */
+	position: relative;
+	transition: transform 0.3s ease;
+}
+
+#textBio:hover {
+	transform: scale(1.05); /* Increase size by 5% */
+}
+
+#paraBio2 {
+	padding: 15px;
+	font-size: 18px;
+}
+
+/* ======================================================== SKILLS s3 ==================================================================== */
+
+/* Section 3: Skills */
+.square-container {
+	display: grid; /* Using grid layout */
+	grid-template-columns: repeat(3, 1fr); /* 3 columns on top */
+	grid-template-rows: repeat(2, 1fr); /* 2 rows on the bottom */
+	gap: 20px; /* Spacing between the boxes */
+	width: 86%;
+	height: 75%;
+	padding: 0px;
+	margin-top: 5%;
+	box-sizing: border-box;
+}
+
+/* Styling each square */
+.square {
+	border-radius: 7px;
+	overflow: hidden; /* Ensures that content does not overflow the box */
+	display: flex;
+	flex-direction: column; /* Stack image and text vertically */
+	height: 100%; /* Ensure the square takes full height */
+	padding: 5%;
+	/* border: red 1px solid; */
+}
+
+/* Image styling to retain aspect ratio and occupy the upper half */
+.square img {
+	width: auto; /* Width adjusts according to image aspect ratio */
+	height: 50%; /* Image takes up 50% of the box height */
+	object-fit: contain; /* Ensures the image is fully visible without stretching */
+	margin: 0 auto; /* Centers the image horizontally */
+	position: relative;
+}
+
+/* Text styling to occupy the lower half */
+.square-text1 {
+	font-size: 28px;
+	color: var(--text-color);
+	text-align: center;
+	padding-top: 10px;
+	position: relative;
+	height: 50%;
+	display: flex;
+	justify-content: center; /* Centers the text vertically */
+	/* border: orange 1px solid; */
+}
+
+.square-text2 {
+	font-size: 16px;
+	color: var(--text-color);
+	text-align: center;
+	padding-left: 30px;
+	padding-right: 30px;
+	position: relative;
+	height: 50%; /* Ensure text takes up the bottom half of the box */
+	display: flex;
+	justify-content: center; /* Centers the text vertically */
+	/* border: orange 1px solid; */
+}
+
+
+/* Additional styling for responsive layouts */
+@media (max-width: 768px) {
+	.square-container {
+		grid-template-columns: 1fr 1fr; /* Stack the boxes in two columns on smaller screens */
+		grid-template-rows: repeat(3, 1fr); /* Make 3 rows */
+	}
+
+	.square {
+		width: 100%; /* Ensure squares take up full width */
+	}
+}
+
+/* ======================================================== PROJECTS s4 ==================================================================== */
+
+/* BRICK WALL LAYOUT */
+.brick-wall {
+	display: grid;
+	grid-template-columns: 1fr 1fr; /* Two columns */
+	grid-template-rows: repeat(2, 1fr); /* Two rows */
+	gap: 20px; /* Space between bricks */
+	width: 90%;
+	height: 70%;
+	/* margin: auto; Center the brick wall within the section */
+	margin-top: 4%;
+	position: relative;
+	/* border: red 1px solid; */
+}
+
+.brick {
+	display: flex;
+	justify-content: space-between;
+	background-color: var(--secondary-color); /* Default color */
+	color: var(--text-color); /* Text color from the theme */
+	transition: width 0.5s ease, margin-left 0.5s ease;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	border-radius: 7px;
+	box-sizing: border-box; /* Ensure padding does not affect total size */
+}
+
+/* When a brick is hovered, increase/decrease the width */
+.brick:hover {
+	width: 120%; /* Increase width on hover */
+	z-index: 10; /* Bring the hovered box to the front */
+}
+
+/* Shrink boxes when hovered by neighboring boxes */
+.shrink {
+	width: 80%; /* Decrease width of the neighboring boxes */
+}
+
+.brick2:hover,
+.brick4:hover {
+	margin-left: -20%; /* Shift to the left with margin-left */
+}
+
+.brick1:hover + .brick2,
+.brick3:hover + .brick4 {
+	margin-left: 20%;
+}
+
+#brickText {
+	display: flex; /* Enable Flexbox */
+	align-items: center; /* Centers vertically */
+	text-align: justify;
+	font-size: 15px;
+	font-weight: bold;
+	line-height: 1.4;
+	padding: 20px;
+}
+
+.box-image {
+	width: 35%; /* Make the image occupy 30% of the left side */
+	height: auto; /* Maintain aspect ratio */
+	object-fit: cover; /* Ensure the image covers the area without distortion */
+}
+
+/* ======================================================== EXPERIENCE s5 ==================================================================== */
+
+/* Styling the container for columns */
+.columns-container {
+	display: grid; /* Use Grid for a 3-column layout */
+	grid-template-columns: repeat(3, 1fr); /* 3 equal-width columns */
+	gap: 30px; /* Space between the columns */
+	width: 90%; /* Occupy 90% of the page width */
+	height: 70vh; /* Occupy 90% of the viewport height */
+	padding: 20px;
+	margin-top: 7%;
+	box-sizing: border-box;
+}
+
+/* Styling the individual columns */
+.columns-container .column {
+	background-color: var(--secondary-color);
+	border-radius: 7px;
+	overflow-y: hidden;
+	font-size: 15px;
+	line-height: 1.6;
+	height: 90%; /* Slightly smaller initial height */
+	transition: height 0.3s ease, margin-top 0.3s ease;
+	margin-top: 5%;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.columns-container .column:hover {
+	height: 100%; /* Full height */
+	margin-top: 0%; /* Adjust spacing to keep it centered */
+}
+
+/* Styling the job title container */
+.job-title-container {
+	display: block;
+	text-decoration: none; /* Remove underline from links */
+}
+
+.job-title {
+	background-color: var(--text-color);
+	color: var(--primary-color); /* White text by default */
+	transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+	display: flex;
+	flex-direction: column;
+	text-align: justify;
+	padding: 17px;
+	padding-bottom: 5px;
+}
+
+.job-title-container:hover .job-title {
+	/* background-color: rgb(175, 64, 64); */
+	background-color: rgb(175, 175, 175);
+	color: black; /* Black text on hover */
+}
+
+#dateSkill {
+	padding-bottom: 10px;
+}
+
+.experience-text-box {
+	margin-top: 5%;
+	flex-grow: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center; /* Centers the text vertically and horizontally */
+	padding-left: 20px;
+	padding-right: 20px;
+	text-align: justify;
+	transition: line-height 0.3s ease;
+	margin: 10px;
+}
+
+ul li {
+	margin-bottom: 8px; /* Adds space between the list items */
+}
+
+.columns-container .column ul li {
+	transition: margin-bottom 0.3s ease; /* Add smooth transition to spacing */
+}
+
+.columns-container .column:hover ul li {
+	margin-bottom: 15px; /* Increase space between points when hovering the box */
+}
+
+/* ======================================================== VIDEO s6 ==================================================================== */
+
+.video-container {
+	margin-top: 5%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%; /* Make it fill the section */
+}
+
+.video-container video {
+	width: 80vw; /* 80% of the viewport width */
+	height: auto; /* Maintain aspect ratio */
+	max-height: 80vh; /* Prevent the video from being taller than 80% of the viewport height */
+	/* border: 2px solid var(--text-color); Optional: Add a border for styling */
+	border-radius: 10px; /* Optional: Rounded corners */
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Optional: Add a shadow for better aesthetics */
+}
+
+/* ========================================================== MAIL s7 ================================================================ */
+
+/* Contact section styling */
+.contact-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 5%;
+	padding: 10%;
+	width: 100%;
+	height: 100%;
+	gap: 10%; /* Space between form and contact info */
+}
+
+/* Left side: Contact Form */
+.contact-form-container {
+	width: 50%; /* Take up 48% of the width */
+}
+
+.contact-form {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+.contact-form label {
+	font-size: 1em;
+	text-align: left;
+}
+
+.contact-form input,
+.contact-form textarea {
+	width: 100%;
+	padding: 10px;
+	font-size: 1em;
+	border: 1px solid var(--secondary-color);
+	border-radius: 5px;
+	background-color: #f9f9f9;
+	color: #333;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+	outline: none;
+	border-color: var(--text-color); /* Highlighted border on focus */
+}
+
+.contact-form button {
+	padding: 10px 20px;
+	font-size: 1em;
+	color: var(--text-color);
+	background-color: var(--primary-color);
+	border: 2px var(--text-color) solid;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.2s ease;
+}
+
+.contact-form button:hover {
+	background-color: var(--text-color);
+	color: var(--primary-color);
+}
+
+
+.contact-info-container {
+	width: 35%; /* Adjust as needed */
+	padding: 30px;
+	border: white 2px solid;
+	display: flex;
+	flex-direction: column; /* Stack icons and text vertically */
+	align-items: center; /* Center the content horizontally */
+	border-radius: 7px;
+	text-align: left;
+}
+
+/* If you have icons (images) in the contact info, this will center them */
+.contact-info-container img {
+	width: 30px; /* Adjust size as needed */
+	height: 30px; /* Adjust size as needed */
+}
+
+.contact-info-container h2 {
+	font-size: 1.8em;
+	margin-bottom: 15px;
+	color: var(--text-color);
+}
+
+.contact-info-container p {
+	font-size: 1.1em;
+	margin: 10px;
+	color: var(--text-color);
+}
+
+.info-buttons {
+    display: flex;
+    justify-content: center; /* Center the buttons horizontally */
+    gap: 10px; /* Add space between the buttons */
+    margin-top: 20px; /* Add space above the buttons */
+	
+}
+
+.info-buttons button {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: var(--text-color);
+    background-color: var(--primary-color);
+    border: 2px var(--text-color) solid;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+	width: 240px;
+}
+
+.info-buttons button:hover {
+    background-color: var(--text-color);
+    color: var(--primary-color);
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+	.contact-container {
+		flex-direction: column; /* Stack the form and contact info vertically */
+	}
+
+	.contact-form-container,
+	.contact-info-container {
+		width: 100%; /* Make both containers full-width */
+	}
+}
